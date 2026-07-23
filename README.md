@@ -1,4 +1,4 @@
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=25&pause=1000&color=00FFFF&center=true&vCenter=true&width=435&lines=TG+BOT)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=25&pause=1000&color=00FFFF&center=true&vCenter=true&width=435&lines=AKITA+MUSIC+BOT)](https://git.io/typing-svg)
 
 ---
 
@@ -14,7 +14,7 @@
 🗃️ Credits
 
 🏆 Original Creator:
-- 👨‍💻 Azadx69x — telegram-bot
+- 👨‍💻 MrDevilCoder — AkitaMusicBot
 ---
 
 📜 𝙻𝙸𝙲𝙴𝙽𝚂𝙴
@@ -23,7 +23,7 @@
 🤖 telegram bot
 The MIT License (No Derivatives)
 
-Copyright (c) 2026, Azadx69x (ncazad)
+Copyright (c) 2026, MrDevilCoder (Toxic XD)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
