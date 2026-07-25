@@ -96,7 +96,7 @@
     <table>
       <tr>
         <td align="center">
-          <a href="https://dashboard.heroku.com/new?template=https://github.com/ItsMeVishal0/VishalMusic">
+          <a href="https://dashboard.heroku.com/new?template=https://github.com/MrDevilCoder/AKITAMUSIC">
             <img src="https://img.shields.io/badge/🚀_HEROKU_DEPLOY-430098?style=for-the-badge&logo=heroku&logoColor=white&labelColor=000000" width="250"/>
           </a>
           <br><sub>One-Click Cloud Deployment</sub>
