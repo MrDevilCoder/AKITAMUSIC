@@ -1,11 +1,24 @@
 services:
-  - type: worker
-    name: telegram-bot
+  - type: web
+    name: akitamusic-bot
     env: node
+    region: singapore
+    plan: free
     buildCommand: npm install
     startCommand: node index.js
+    healthCheckPath: /
     envVars:
       - key: BOT_TOKEN
         sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: ADMIN_ID
+        sync: false
+      - key: BOT_USERNAME
+        sync: false
+      - key: BOT_PREFIX
+        value: ")"
       - key: NODE_ENV
         value: production
+      - key: PORT
+        value: "3000"

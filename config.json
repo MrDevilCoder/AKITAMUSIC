@@ -1,11 +1,11 @@
 {
   "bot": {
-    "token": "bot_token",
-    "username": "bot_username",
+    "token": "",
+    "username": "",
     "prefix": ")"
   },
-  "admins": [7047432575],
-  "owner": 7047432575,
+  "admins": [],
+  "owner": 0,
   "settings": {
     "language": "en",
     "maintenance": false,
@@ -15,7 +15,7 @@
   },
   "database": {
     "type": "mongodb",
-    "uriMongodb": "mongodb+srv://Hinata:W2fNh.H9iWFU22F@cluster0.cyattib.mongodb.net/OZADNOOB1?retryWrites=true&w=majority&appName=Cluster0"
+    "uriMongodb": ""
   },
   "credits": {
     "made_by": "Azadx69x",

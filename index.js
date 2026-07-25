@@ -15,26 +15,44 @@ import { applyBoldFont } from "./utils/font.js";
 import logger from "./utils/logger.js";
 import { printBanner } from "./utils/banner.js";
 
-const config = JSON.parse(
-  readFileSync(new URL("./config.json", import.meta.url))
-);
+// ── Load config (env vars take priority over config.json) ──
+let config = {};
+try {
+  config = JSON.parse(readFileSync(new URL("./config.json", import.meta.url)));
+} catch {
+  logger.warn("config.json not found or invalid — using env vars only");
+}
 
+// ── Apply env var overrides ──
 const token = process.env.BOT_TOKEN || config?.bot?.token;
+const adminIdEnv = process.env.ADMIN_ID;
+if (adminIdEnv) {
+  const id = parseInt(adminIdEnv, 10);
+  if (!isNaN(id)) {
+    config.admins = [...new Set([...(config.admins || []), id])];
+    config.owner = id;
+  }
+}
+if (process.env.BOT_USERNAME) config.bot = { ...config.bot, username: process.env.BOT_USERNAME };
+if (process.env.BOT_PREFIX)   config.bot = { ...config.bot, prefix: process.env.BOT_PREFIX };
 
-if (!token || token === "") {
-  logger.error("Bot token not set! Set BOT_TOKEN env var.");
+if (!token || token === "" || token === "bot_token") {
+  logger.error("Bot token not set! Set the BOT_TOKEN environment variable on Render.");
   process.exit(1);
 }
 
+// ── Express web server ──
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  logger.info(`Server running on port ${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  logger.info(`Web server running on port ${PORT}`);
 });
 
+// ── Connect MongoDB ──
 await connectMongo();
 
+// ── Clear any existing webhook ──
 async function clearWebhook() {
   try {
     await axios.get(`https://api.telegram.org/bot${token}/deleteWebhook?drop_pending_updates=true`);
@@ -47,6 +65,7 @@ async function clearWebhook() {
 await clearWebhook();
 await new Promise(r => setTimeout(r, 5000));
 
+// ── Create bot ──
 const bot = new TelegramBot(token, {
   polling: {
     interval: 1000,
@@ -126,6 +145,7 @@ registerAdminCommands(bot);
 registerAutoDownload(bot);
 setupWebsite(app, bot, config);
 
+// ── Polling with auto-restart ──
 let polling = false;
 
 async function startPolling() {
@@ -141,7 +161,7 @@ async function startPolling() {
     logger.info("Starting polling...");
     await bot.startPolling();
     polling = true;
-    logger.success("Polling started");
+    logger.success("Polling started ✅");
   } catch (err) {
     logger.error(`Polling failed to start: ${err.message}`);
     logger.info("Retrying in 20s...");
@@ -180,9 +200,10 @@ process.on("unhandledRejection", (err) => {
 
 await startPolling();
 
-logger.success("Bot is online!");
+logger.success("🤖 Bot is online!");
 logger.info(`Prefix: ${config?.bot?.prefix || ")"}`);
 
+// ── Send restart notification if applicable ──
 const RESTART_FILE = path.join(process.cwd(), "temp", ".restart_pending.json");
 try {
   if (await fs.pathExists(RESTART_FILE)) {
@@ -197,4 +218,4 @@ try {
   }
 } catch (e) {
   logger.warn("Could not send restart notification: " + e.message);
-};
+}
