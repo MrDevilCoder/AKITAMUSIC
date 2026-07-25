@@ -10,7 +10,7 @@
 
   <!-- ANIMATED TITLE -->
   <h1 align="center">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=800&size=35&duration=4000&pause=1000&color=FF1493&center=true&vCenter=true&width=700&height=60&lines=🎶+VISHAL+MUSIC+✨;🔥+PREMIUM+TELEGRAM+MUSIC+BOT;🚀+ULTIMATE+STREAMING+EXPERIENCE+🎵;⚡+LIGHTNING+FAST+%26+SMOOTH;🌍+15%2B+INDIAN+LANGUAGES+SUPPORTED" alt="Animated Title" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=800&size=35&duration=4000&pause=1000&color=FF1493&center=true&vCenter=true&width=700&height=60&lines=🎶+AKITA+MUSIC+✨;🔥+PREMIUM+TELEGRAM+MUSIC+BOT;🚀+ULTIMATE+STREAMING+EXPERIENCE+🎵;⚡+LIGHTNING+FAST+%26+SMOOTH;🌍+15%2B+INDIAN+LANGUAGES+SUPPORTED" alt="Animated Title" />
   </h1>
 
   <!-- DEVELOPER INTRO ANIMATED -->
