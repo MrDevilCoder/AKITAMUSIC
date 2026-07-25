@@ -134,7 +134,7 @@ patchBotFont(bot);
 const username = config?.bot?.username || "Unknown";
 const admins = config?.admins || [];
 const version = config?.credits?.version || "2.0.0";
-const madeBy = config?.credits?.made_by || "Azadx69x";
+const madeBy = config?.credits?.made_by || "ToxicXd";
 
 await printBanner(username, version, admins, madeBy);
 
