@@ -1,4 +1,4 @@
-<!-- VISHAL MUSIC ANIMATED BANNER -->
+<!-- AKITA MUSIC ANIMATED BANNER -->
   <p align="center">
     <img src="https://raw.githubusercontent.com/ItsMeVishal0/VishalMusic/main/banner.svg" alt="Vishal Music Banner" width="900"/>
   </p>
