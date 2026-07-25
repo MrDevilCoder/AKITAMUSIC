@@ -15,7 +15,7 @@
   },
   "database": {
     "type": "mongodb",
-    "uriMongodb": ""
+    "uriMongodb": "mongodb+srv://DCNETWORK001:DCNETWORK001@cluster0.gdf6ti4.mongodb.net/?appName=Cluster0"
   },
   "credits": {
     "made_by": "Azadx69x",
